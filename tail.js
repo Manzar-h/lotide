@@ -24,3 +24,4 @@ assertEqual(result[1], "Labs"); // ensure second element is "Labs"
 ✅✅✅Assertion Passed: Lighthouse === Lighthouse
 ✅✅✅Assertion Passed: Labs === Labs
 */
+
