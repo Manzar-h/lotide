@@ -4,6 +4,3 @@ const tail = function(array) {
 
 const assertEqual = require('./assertEqual');
 module.exports = tail;
-
-
-
