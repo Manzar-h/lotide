@@ -19,7 +19,9 @@ const findKey = function(object, callback) {
   return final;
 };
 
-// first test case: matches 
+module.exports = findKey;
+
+// first test case: matches
 assertEqual(findKey({
   "Blue Hill": { stars: 1 },
   "Akaleri":   { stars: 3 },

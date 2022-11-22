@@ -37,6 +37,8 @@ const eqArrays = function(array1, array2) {
   return true;
 };
 
+module.exports = assertObjectsEqual;
+
 //input
 const a = { a: "1", b: "" };
 const b = { b: "2", a: "1" };

@@ -9,6 +9,8 @@ const takeUntil = function(array, callback) {
   } return results;
 };
 
+module.exports = takeUntil;
+
 const data1 = [1, 2, 5, 7, 2, -1, 2, 4, 5];
 const results1 = takeUntil(data1, x => x < 0);
 console.log(results1);
@@ -25,7 +27,7 @@ console.log(results2);
 [ "I've", 'been', 'to', 'Hollywood' ]
 */
 const eqArrays = function(array1, array2) {
-  if (array1.length != array2.length) {
+  if (array1.length !== array2.length) {
     return false;
   }
   for (let i = 0; i < array1.length; i++) {
