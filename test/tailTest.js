@@ -1,15 +1,29 @@
+const assert = require('chai').assert;
+
 const assertEqual = require('../assertEqual');
 const tail = require('../tail');
 
-const result = tail(["Hello", "Lighthouse", "Labs"]);
-assertEqual(result.length, 2); // ensure we get back two elements
-assertEqual(result[0], "Lighthouse"); // ensure first element is "Lighthouse"
-assertEqual(result[1], "Labs"); // ensure second element is "Labs"
+
+describe("#tail", () => {
+  it("returns [2, 3] for [1, 2, 3]", () => {
+    assert.deepEqual(tail([1, 2, 3]), [2, 3]);
+  });
+})
+
+describe("#tail", () => {
+  it("returns ['Lighthouse', 'Labs'] for ['Hello', 'Lighthouse', 'Labs']", () => {
+    assert.deepEqual(tail(["Hello", "Lighthouse", "Labs"]), ["Lighthouse", "Labs"]);
+  });
+})
+
+/*Output
+
+  #tail
+    ✔ returns [2, 3] for [1, 2, 3]
+
+  #tail
+    ✔ returns ['Lighthouse', 'Labs'] for ['Hello', 'Lighthouse', 'Labs']
 
 
-/*
-****Output****
-✅✅✅Assertion Passed: 2 === 2
-✅✅✅Assertion Passed: Lighthouse === Lighthouse
-✅✅✅Assertion Passed: Labs === Labs
-*/
+  2 passing (3ms)
+  */

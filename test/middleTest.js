@@ -1,31 +1,55 @@
 const assertArraysEqual = require('../assertArraysEqual');
 const middle = require('../middle');
 
-//test cases
-console.log(middle([]));
-console.log(middle([1]));
-console.log(middle([1,2]));
+const assert = require('chai').assert;
 
-console.log(assertArraysEqual(middle([1,2,3]), middle([1,2,3])));
-console.log(assertArraysEqual(middle([1,2,3,4,5]), middle([1,3,3])));
+describe('#middle', () => {
+  it("Odd Numbers Test: returns [2] for [1, 2, 3]", () =>{
+    assert.deepEqual(middle([1, 2, 3]), [2]);
+  });
+});
 
-console.log(assertArraysEqual(middle([1,2,4,5]), middle([1,3,2,4,3,6])));
-console.log(assertArraysEqual(middle([1,2,6,5]), middle([1,3,2,4,3,6])));
-console.log(middle([1,2,3,4,5,6]));
+describe('#middle', () => {
+  it("2 Odd Numbers arrays with differnt length but with same middle will return true", () =>{
+    assert.deepEqual(middle([1, 2, 3]), middle([-1, 1, 2, 4, 5]));
+  });
+});
+
+//edge Cases:
+describe('#middle', () => {
+  it("returns [] for empty array", () =>{
+    assert.deepEqual(middle([]), []);
+  });
+});
+
+describe('#middle', () => {
+  it("returns [] of array with one element", () =>{
+    assert.deepEqual(middle([1]), []);
+  });
+});
+
+describe('#middle', () => {
+  it("returns [] of array with two element", () =>{
+    assert.deepEqual(middle([1, 2]), []);
+  });
+});
+
+/*Output 
+#middle
+    ✔ Odd Numbers Test: returns [2] for [1, 2, 3]
+
+  #middle
+    ✔ 2 Odd Numbers arrays with differnt length but with same middle will return true
+
+  #middle
+    ✔ returns [] for empty array
+
+  #middle
+    ✔ returns [] of array with one element
+
+  #middle
+    ✔ returns [] of array with two element
 
 
-/*
-****Output****
-[]
-[]
-[]
-✅✅✅ Assertion Passed: 2 === 2
-undefined
-✅✅✅ Assertion Passed: 3 === 3
-undefined
-✅✅✅ Assertion Passed: 2,4 === 2,4
-undefined
-🛑🛑🛑 Assertion Failed: 2,6 !== 2,4
-undefined
-[ 3, 4 ]
-*/
+  5 passing (3ms)
+  */
